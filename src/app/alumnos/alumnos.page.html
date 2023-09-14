@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      QRClassConnect | Home
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" [routerLink]="['/login']" color="warning">Log Out</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Bienvenido a clases</ion-card-title>
+      <ion-card-subtitle>
+        Alumno: {{ nombre }} {{ apellido }}
+        <br>{{ correo }}
+      </ion-card-subtitle>
+    </ion-card-header>
+    
+    <ion-card-content>
+      Permite que la aplicación QRClassConnect acceda a la cámara de tu dispositivo móvil y luego escanea el código QR para registrar tu asistencia en clases.
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-button fill="clear" color="warning">Dar Acceso</ion-button>
+      <ion-button id="open-modal" color="warning">Abrir Cámara</ion-button>
+      <ion-modal [keepContentsMounted]="true" trigger="open-modal" #modal>
+        <ng-template>
+          <ion-header>
+            <ion-toolbar style="display: flex; justify-content: space-between;">
+              <ion-buttons slot="end">
+                <ion-button [routerLink]="['/login']" (click)="modal.dismiss()" color="warning">aceptar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <h2 class="ion-padding">¡Registro completado con éxito!</h2>
+          <img src="assets/img/check.png"/>
+        </ng-template>
+      </ion-modal>
+    </ion-card-content>
+  </ion-card>
+  
+  
+
+</ion-content>
+
+<ion-datetime-button datetime="datetime"></ion-datetime-button>
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="footer-message">© 2023 Hurub+. Todos los derechos reservados.</ion-title>
+  </ion-toolbar>
+</ion-footer>
+  

@@ -1,10 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      <img src="assets/img/logo2.png"/>
+      <img src="assets/img/logo2.png"/> | Home
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button fill="clear" [routerLink]="['/login']" color="warning">Log Out</ion-button>
+      <ion-button (click)="cerrarSesion()" fill="clear" [routerLink]="['/login']" color="warning">Log Out</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
